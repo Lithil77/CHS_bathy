@@ -1,0 +1,21 @@
+.layerlistAccord>.accordion-item>.accordion-header>.accordion-button {
+    padding: 6px;
+    opacity:0.8;
+}
+.layerlistAccord{
+    background: #f0f0f0 !important;
+  cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
+    auto !important;
+}
+/* .layerlistAccord>.accordion-item:nth-child(1)>.accordion-header> button {
+background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+.layerlistAccord>.accordion-item:nth-child(2)>.accordion-header> button {
+background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+.layerlistAccord>.accordion-item:nth-child(3)>.accordion-header> button {
+background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+}
+.layerlistAccord>.accordion-item:nth-child(4)>.accordion-header> button {
+background: linear-gradient(135deg, #c3cfe2 0%, #c3cfe2 100%);
+} */
