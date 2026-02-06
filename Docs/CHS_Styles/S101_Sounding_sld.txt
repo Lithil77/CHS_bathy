@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld:StyledLayerDescriptor
+  version="1.0.0"
+  xmlns:sld="http://www.opengis.net/sld"
+  xmlns:ogc="http://www.opengis.net/ogc">
+
+  <sld:NamedLayer>
+    <sld:Name>SOUNDG</sld:Name>
+
+    <sld:UserStyle>
+      <sld:Title>S_101_Sounding</sld:Title>
+
+      <sld:FeatureTypeStyle>
+
+        <!-- ================= SHALLOW SOUNDINGS ================= -->
+        <sld:Rule>
+          <sld:Name>Shallow (9m)</sld:Name>
+          <ogc:Filter>
+            <ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyName>main_part</ogc:PropertyName>
+              <ogc:Literal>9</ogc:Literal>
+            </ogc:PropertyIsLessThanOrEqualTo>
+          </ogc:Filter>
+
+          <!-- Integer part -->
+          <sld:TextSymbolizer>
+            <sld:Label>
+              <ogc:PropertyName>main_part</ogc:PropertyName>
+            </sld:Label>
+            <sld:Font>
+              <sld:CssParameter name="font-family">Arial</sld:CssParameter>
+              <sld:CssParameter name="font-size">11</sld:CssParameter>
+            </sld:Font>
+            <sld:Fill>
+              <sld:CssParameter name="fill">#000000</sld:CssParameter>
+            </sld:Fill>
+                        <sld:LabelPlacement>
+              <sld:PointPlacement>
+                <sld:Displacement>
+                  <sld:DisplacementX>0</sld:DisplacementX>
+                  <sld:DisplacementY>0</sld:DisplacementY>
+                </sld:Displacement>
+              </sld:PointPlacement>
+            </sld:LabelPlacement>
+          </sld:TextSymbolizer>
+
+          <!-- Decimal part -->
+          <sld:TextSymbolizer>
+            <sld:Label>
+              <ogc:PropertyName>decimal_part</ogc:PropertyName>
+            </sld:Label>
+            <sld:Font>
+              <sld:CssParameter name="font-family">Arial</sld:CssParameter>
+              <sld:CssParameter name="font-size">8</sld:CssParameter>
+            </sld:Font>
+            <sld:Fill>
+              <sld:CssParameter name="fill">#000000</sld:CssParameter>
+            </sld:Fill>
+            <sld:LabelPlacement>
+              <sld:PointPlacement>
+                <sld:Displacement>
+                  <sld:DisplacementX>8</sld:DisplacementX>
+                  <sld:DisplacementY>-4</sld:DisplacementY>
+                </sld:Displacement>
+              </sld:PointPlacement>
+            </sld:LabelPlacement>
+          </sld:TextSymbolizer>
+        </sld:Rule>
+
+        <!-- ================= MEDIUM SOUNDINGS ================= -->
+        <sld:Rule>
+          <sld:Name>Medium (10 To 20m)</sld:Name>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>main_part</ogc:PropertyName>
+                <ogc:Literal>9</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>main_part</ogc:PropertyName>
+                <ogc:Literal>20</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+
+          <!-- Integer -->
+          <sld:TextSymbolizer>
+            <sld:Label>
+              <ogc:PropertyName>main_part</ogc:PropertyName>
+            </sld:Label>
+            <sld:Font>
+              <sld:CssParameter name="font-family">Arial</sld:CssParameter>
+              <sld:CssParameter name="font-size">10</sld:CssParameter>
+            </sld:Font>
+            <sld:Fill>
+              <sld:CssParameter name="fill">#000080</sld:CssParameter>
+            </sld:Fill>
+             <sld:LabelPlacement>
+              <sld:PointPlacement>
+                <sld:Displacement>
+                  <sld:DisplacementX>0</sld:DisplacementX>
+                  <sld:DisplacementY>0</sld:DisplacementY>
+                </sld:Displacement>
+              </sld:PointPlacement>
+            </sld:LabelPlacement>
+          </sld:TextSymbolizer>
+
+          <!-- Decimal -->
+          <sld:TextSymbolizer>
+            <sld:Label>
+              <ogc:PropertyName>decimal_part</ogc:PropertyName>
+            </sld:Label>
+            <sld:Font>
+              <sld:CssParameter name="font-family">Arial</sld:CssParameter>
+              <sld:CssParameter name="font-size">7</sld:CssParameter>
+            </sld:Font>
+            <sld:Fill>
+              <sld:CssParameter name="fill">#000080</sld:CssParameter>
+            </sld:Fill>
+            <sld:LabelPlacement>
+              <sld:PointPlacement>
+                <sld:Displacement>
+                  <sld:DisplacementX>12</sld:DisplacementX>
+                  <sld:DisplacementY>-4</sld:DisplacementY>
+                </sld:Displacement>
+              </sld:PointPlacement>
+            </sld:LabelPlacement>
+          </sld:TextSymbolizer>
+        </sld:Rule>
+
+        <!-- ================= DEEP SOUNDINGS ================= -->
+        <sld:Rule>
+          <sld:Name>Deep (> 20m)</sld:Name>
+          <ogc:Filter>
+            <ogc:PropertyIsGreaterThan>
+              <ogc:PropertyName>main_part</ogc:PropertyName>
+              <ogc:Literal>20</ogc:Literal>
+            </ogc:PropertyIsGreaterThan>
+          </ogc:Filter>
+
+          <sld:TextSymbolizer>
+            <sld:Label>
+              <ogc:PropertyName>main_part</ogc:PropertyName>
+            </sld:Label>
+            <sld:Font>
+              <sld:CssParameter name="font-family">Arial</sld:CssParameter>
+              <sld:CssParameter name="font-size">9</sld:CssParameter>
+            </sld:Font>
+            <sld:Fill>
+              <sld:CssParameter name="fill">#404040</sld:CssParameter>
+            </sld:Fill>
+          </sld:TextSymbolizer>
+        </sld:Rule>
+      </sld:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+</sld:StyledLayerDescriptor>

@@ -1,0 +1,43 @@
+Geoserver layer Name                          PostgresDb_tables
+....................
+S-101
+...........
+S-101 Depth areas                     Yes   s101_depthobj
+S-101 Depth areas mismatch            yes   s101_dept_dred_errs
+S-101 Sounding mismatch               Yes   s101_soundmismatch_errs
+S-101 Soundings                       Yes   bathy101.bathy
+S-101 VALSOU mismatch                 PUBLISH BUT NO DATA
+
+S-57
+.........
+S-57 Depth areas                       yes  s57depth_features
+S-57 Depth areas mismatch              YES s57depth_drgare_mis
+S-57 Other areas with DRVAL1 mismatch  yES s57depth_drgare_mis
+S-57 Soundings                         Yes   s57sound_mis
+S-57 VALSOU mismatch                   PUBLISH BUT NO DATA s57valsou_mis
+S-57 Sounding mismatch                 yes bathy57.bathy
+ 
+
+S-102
+.........
+S102 Bathy Raster                    yes
+BSH S102 Bathy Raster                yes
+
+
+Database credentials:
+.....................
+
+host :: devfarm
+port  :: 5999
+database :: s102v1
+schema:jp102,compare,public,bathy101,bathy57
+username:: postgres
+pwd:postgres123#
+
+
+select distinct "Objectname" from compare.s57depth_drgare_mis 
+
+SELECT distinct "feature" FROM compare.s101_depthobj
+
+
+
